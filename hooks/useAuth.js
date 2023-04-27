@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react'
-import * as AuthSession from 'expo-auth-session'
+// import * as AuthSession from 'expo-auth-session'
 
 const AuthContext = createContext({})
 
@@ -12,10 +12,12 @@ const config = {
 
 export const AuthProvider = ({ children }) => {
 
+
+    
     const signInWithGoogle = async () => {
         Google.logInAsync(config).then(async (logInResult) => {
             if (logInResult.type === 'success') {
-            //login
+                //login
             }
         })
     }
@@ -23,10 +25,12 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider
             value={{
-                user: "caleb",
+                user: "null",
+                signInWithGoogle,
             }}
         >
-            {children}</AuthContext.Provider>
+            {children}
+        </AuthContext.Provider>
     )
 }
 
