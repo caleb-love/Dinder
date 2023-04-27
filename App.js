@@ -16,9 +16,9 @@ export default function App() {
 
     <NavigationContainer>
       <AuthProvider>
-        {/* <TailwindProvider utilities={utilities}> */}
+        <TailwindProvider utilities={utilities}>
           <StackNavigator />
-        {/* </TailwindProvider> */}
+        </TailwindProvider>
       </AuthProvider>
     </NavigationContainer>
   )
