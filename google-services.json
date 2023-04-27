@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "898054924165",
+    "project_id": "dinder-application",
+    "storage_bucket": "dinder-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898054924165:android:f50e4c7139edc48152c6ec",
+        "android_client_info": {
+          "package_name": "host.exp.exponent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898054924165-34jj9u5k0mlgh9ku2gk04btutqbj2ai5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAfRSlaF78onwFsMXhUJL1R0J5SztSjtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898054924165-34jj9u5k0mlgh9ku2gk04btutqbj2ai5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "898054924165-iucbbr3m02n2mgidoetc4785i8kacfq2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "host.exp.exponent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
