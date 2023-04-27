@@ -6,7 +6,7 @@ const HomeScreen = () => {
     const navigation = useNavigation()
     return (
         <View>
-            <Text>I am the HomeScreen</Text>
+            <Text>I am the HomeScreen for Dinder!</Text>
             <Button title="Go to chat screen" onPress={() => navigation.navigate("Chat")} />
         </View>
     )
