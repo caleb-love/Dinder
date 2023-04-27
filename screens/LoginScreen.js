@@ -20,7 +20,7 @@ const LoginScreen = () => {
             <ImageBackground
                 resizeMode="cover"
                 style={tw('flex-1')}
-                source={{ url: "https://i.pinimg.com/originals/13/6f/fc/136ffc1c10a56e0735eaa34455a5cafe.png" }}
+                source={{ uri: "https://i.pinimg.com/originals/13/6f/fc/136ffc1c10a56e0735eaa34455a5cafe.png" }}
             >
                 <TouchableOpacity style={[
                     tw("absolute bottom-40 w-52 bg-white p-4 rounded-2xl"),
