@@ -1,25 +1,16 @@
-import React from 'react';
-import StackNavigator from './StackNavigator';
-import { LogBox } from 'react-native'
-LogBox.ignoreAllLogs()
-import { NavigationContainer } from '@react-navigation/native';
-import { AuthProvider } from './hooks/useAuth';
-import { TailwindProvider } from 'tailwind-rn';
-import utilities from './tailwind.json';
-// import * as WebBrowser from 'expo-web-browser';
-// import * as Google from 'expo-auth-session/providers/google';
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./StackNavigator";
+import { AuthProvider } from "./hooks/useAuth";
+import { LogBox } from "react-native";
 
-
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
-
     <NavigationContainer>
       <AuthProvider>
-        <TailwindProvider utilities={utilities}>
-          <StackNavigator />
-        </TailwindProvider>
+        <StackNavigator />
       </AuthProvider>
     </NavigationContainer>
-  )
+  );
 }

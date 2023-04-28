@@ -1,24 +1,32 @@
-import { View, Text, Button, SafeAreaView, TouchableOpacity, Image, ImageBackground } from 'react-native'
-import React, { Component, useLayoutEffect } from 'react'
-import useAuth from '../hooks/useAuth'
-import { useTailwind } from 'tailwind-rn';
-const tw = useTailwind
+import {View, Text, ImageBackground, TouchableOpacity } from "react-native"
+import React, { useLayoutEffect } from "react"
+import useAuth from "../hooks/useAuth"
+import tw from "tailwind-rn"
 
 const LoginScreen = () => {
-    const { signInWithGoogle, loading } = useAuth()
+    const { signinWithGoogle, loading } = useAuth();
 
     return (
-        <View style={tw('flex-1 h-100 w-100 bg-purple-400')}>
+        <View style={tw("flex-1")}>
             <ImageBackground
                 resizeMode="cover"
-                style={tw('flex-1')}
-                source={require("../images/bcg.png")}
+                style={tw("flex-1")}
+                source={require('../images/bcg.png')}
             >
-                <TouchableOpacity style={[
-                    tw("absolute  w-52 bg-white p-4 rounded-2xl"),
-                    { marginHorizontal: '25%' }]}
+                <TouchableOpacity
+                    onPress={signinWithGoogle}
+                    style={{
+                        marginHorizontal: "25%",
+                        position: "absolute",
+                        bottom: "25%",
+                        borderRadius: 15,
+                        padding: "4%",
+                        backgroundColor: "white",
+                    }}
                 >
-                    <Text style={tw('font-semibold text-center')} onPress={signInWithGoogle}>Sign In & Start Eating</Text>
+                    <Text style={tw("text-center font-semibold")}>
+                        {loading ? "Loading..." : "Sign to sort out dinner!"}
+                    </Text>
                 </TouchableOpacity>
             </ImageBackground>
         </View>

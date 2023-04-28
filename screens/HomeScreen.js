@@ -1,38 +1,77 @@
-import { useNavigation } from '@react-navigation/native'
-import React, { useLayoutEffect } from 'react'
-import { View, Text, Button, SafeAreaView, TouchableOpacity, Image } from 'react-native'
-import { useTailwind } from 'tailwind-rn';
-import useAuth from '../hooks/useAuth';
-import { Ionicons } from '@expo/vector-icons/';
+const RESTAURANTS = [
+    {
+        id: 1,
+        name: "McDonalds"
+    },
+    {
+        id: 2,
+        name: "Burger King"
+    },
+    {
+        id: 3,
+        name: "Subway"
+    },
+]
 
-const tw = useTailwind
+import {
+    View,
+    SafeAreaView,
+    Platform,
+    TouchableOpacity,
+} from "react-native";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import useAuth from "../hooks/useAuth";
+import { useNavigation } from "@react-navigation/native";
+import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import Swiper from "react-native-deck-swiper";
+import tw from "tailwind-rn";
+
 
 const HomeScreen = () => {
-    const navigation = useNavigation()
-    // const { user, logout } = useAuth()
-    // console.log(user);
+    // const { logout, user } = useAuth();
+    const navigation = useNavigation();
 
     return (
-    
-        <SafeAreaView >
-            <View style={tw('flex-row items-center justify-between px-5')}>
-                <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                    <Ionicons style={tw('h-1 w-10')} name='person-circle-sharp' size={30} color="#D7FF90"/>
+        <SafeAreaView
+            style={{
+                paddingTop: Platform.OS === "android" ? 50 : 0,
+                flex: 1,
+            }}
+        >
+            <View
+                style={{
+                    alignItems: "center",
+                    marginHorizontal: 20,
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                }}
+            >
+                <TouchableOpacity onLongPress={logout}>
+                    <Ionicons style={{ height: 50, width: 50, borderRadius: 50 }} name='person-circle-sharp' size={30} color="#D7FF90" />
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => navigation.navigate("Logout")}>
-                    <Ionicons name='pizza-sharp' size={100} color="#FF909F" />
+                    <Ionicons name="pizza-outline" size={100} color="black" />
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
-                    <Ionicons style={tw('h-1 w-10')} name='chatbubbles-sharp' size={30} color="#90FFF0" />
+                    <Ionicons size={30} name="chatbubbles-sharp" color="#90FFF0" />
                 </TouchableOpacity>
             </View>
 
-            <Text>I am the HomeScreen for Dinder!</Text>
-            <Button title="Go to chat screen" onPress={() => navigation.navigate("Chat")} />
+            <View style={{ flex: 1, margin: -6 }}>
+
+                <View
+                    style={[
+                        { bottom: Platform.OS === "android" ? 35 : 10 },
+                        tw("absolute flex-row items-center justify-evenly right-0 left-0"),
+                    ]}
+                >
+                    <AntDesign name="heart" size={30} color="green" />
+                </View>
+            </View>
         </SafeAreaView>
     )
 }
 
-export default HomeScreen 
+export default HomeScreen
