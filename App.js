@@ -3,7 +3,7 @@ import StackNavigator from './StackNavigator';
 import { LogBox } from 'react-native'
 LogBox.ignoreAllLogs()
 import { NavigationContainer } from '@react-navigation/native';
-import { FirebaseAuth } from './hooks/useAuth';
+import { AuthProvider } from './hooks/useAuth';
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from './tailwind.json';
 // import * as WebBrowser from 'expo-web-browser';
@@ -15,11 +15,11 @@ export default function App() {
   return (
 
     <NavigationContainer>
-      <FirebaseAuth>
+      <AuthProvider>
         <TailwindProvider utilities={utilities}>
           <StackNavigator />
         </TailwindProvider>
-      </FirebaseAuth>
+      </AuthProvider>
     </NavigationContainer>
   )
 }

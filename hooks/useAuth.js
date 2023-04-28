@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import { GoogleAuthProvider, onAuthStateChanged, signInWithCredential, signOut } from '@firebase/auth'
 import * as Google from 'expo-google-app-auth'
 import { auth } from '../firebase'
-// import * as AuthSession from 'expo-auth-session'
 
 const AuthContext = createContext({})
 
@@ -13,7 +12,7 @@ const config = {
     permissions: ["public_profile", "email", "gender", "location"],
 }
 
-export const FirebaseAuth = ({ children }) => {
+export const AuthProvider = ({ children }) => {
     const [error, setError] = useState(null)
     const [user, setUser] = useState(null)
     const [loadingInitial, setLoadingInitial] = useState(true)
@@ -41,6 +40,7 @@ export const FirebaseAuth = ({ children }) => {
             .finally(() => setLoading(false))
     }
 
+
     const signInWithGoogle = async () => {
         setLoading(true)
 
@@ -60,7 +60,7 @@ export const FirebaseAuth = ({ children }) => {
         user,
         loading,
         error,
-        signInWithGoogle,
+        signInWithGoogle, // x: x,
         logout,
     }),
         [user, loading, error]
