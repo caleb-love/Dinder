@@ -2,7 +2,7 @@ import { View, Text, Button, SafeAreaView, TouchableOpacity, Image } from 'react
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useTailwind } from 'tailwind-rn';
-import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons/';
+import { Ionicons } from '@expo/vector-icons/';
 
 const tw = useTailwind
 
@@ -15,7 +15,7 @@ const HomeScreen = () => {
         <SafeAreaView>
             <View style={tw('flex-row items-center justify-between px-5')}>
                 <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                    <Ionicons name='person-circle-sharp' size={30} color="#FF5864"/><ion-icon name="fast-food-sharp"></ion-icon>
+                    <Ionicons name='person-circle-sharp' size={30} color="#FF5864"/>
                 </TouchableOpacity>
 
                 <TouchableOpacity>
