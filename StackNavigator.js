@@ -16,7 +16,7 @@ const StackNavigator = () => {
         <Stack.Navigator
             screenOptions={{
                 headerShown: false,
-        }}
+            }}
         >
             {user ? (
                 <>

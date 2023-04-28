@@ -1,7 +1,7 @@
 import React from 'react';
 import StackNavigator from './StackNavigator';
-// import { LogBox } from 'react-native'
-// LogBox.ignoreAllLogs()
+import { LogBox } from 'react-native'
+LogBox.ignoreAllLogs()
 import { NavigationContainer } from '@react-navigation/native';
 import { FirebaseAuth } from './hooks/useAuth';
 import { TailwindProvider } from 'tailwind-rn';

@@ -23,7 +23,6 @@ export const FirebaseAuth = ({ children }) => {
         () =>
             onAuthStateChanged(auth, (user) => {
                 if (user) {
-                    // Logged in
                     setUser(user)
                 } else {
                     setUser(null)
@@ -47,7 +46,6 @@ export const FirebaseAuth = ({ children }) => {
 
         await Google.logInAsync(config).then(async (logInResult) => {
             if (logInResult.type === 'success') {
-                //login
                 const { idToken, accessToken } = logInResult
                 const credential = GoogleAuthProvider.credential(idToken, accessToken)
 
@@ -62,7 +60,7 @@ export const FirebaseAuth = ({ children }) => {
         user,
         loading,
         error,
-        signInWithGoogle, // x: x,
+        signInWithGoogle,
         logout,
     }),
         [user, loading, error]
@@ -70,7 +68,7 @@ export const FirebaseAuth = ({ children }) => {
 
     return (
         <AuthContext.Provider value={memoedValue}>
-            {!loadingInitial && children}
+            {loadingInitial ? null : children}
         </AuthContext.Provider>
     )
 }

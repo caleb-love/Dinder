@@ -12,21 +12,24 @@ const HomeScreen = () => {
     // console.log(user);
 
     return (
-        <SafeAreaView>
-            <View style={tw('flex-row items-center justify-between px-5')}>
-                <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                    <Ionicons name='person-circle-sharp' size={30} color="#FF5864"/>
+    
+        <SafeAreaView >
+            // Header
+            <View style={tw('items-center relative')}>
+                <TouchableOpacity style={tw('absolute left-5 top-5')} onPress={() => navigation.navigate("Login")}>
+                    <Ionicons name='person-circle-sharp' size={30} color="#D7FF90"/>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
-                    <Image style={tw('h-14 w-14')} source={require("../images/bcg.png")} />
+                <TouchableOpacity onPress={() => navigation.navigate("Logout")}>
+                    <Ionicons name='pizza-sharp' size={100} color="#FF909F" />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
-                    <Ionicons name='chatbubbles-sharp' size={30} color="#FF5864" />
+                <TouchableOpacity style={tw('absolute left-5 top-5')} onPress={() => navigation.navigate("Chat")}>
+                    <Ionicons name='chatbubbles-sharp' size={30} color="#90FFF0" />
                 </TouchableOpacity>
             </View>
 
+            // Body
             <Text>I am the HomeScreen for Dinder!</Text>
             <Button title="Go to chat screen" onPress={() => navigation.navigate("Chat")} />
             {/* <Button title="Logout" onPress={logout} /> */}

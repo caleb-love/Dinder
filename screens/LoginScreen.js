@@ -8,7 +8,7 @@ const LoginScreen = () => {
     const { signInWithGoogle, loading } = useAuth()
 
     return (
-        <View style={tw('flex-1 h-100 w-100')}>
+        <View style={tw('flex-1 h-100 w-100 bg-purple-400')}>
             <ImageBackground
                 resizeMode="cover"
                 style={tw('flex-1')}
