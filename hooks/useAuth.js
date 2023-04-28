@@ -13,7 +13,7 @@ const config = {
     permissions: ["public_profile", "email", "gender", "location"],
 }
 
-export const AuthProvider = ({ children }) => {
+export const FirebaseAuth = ({ children }) => {
     const [error, setError] = useState(null)
     const [user, setUser] = useState(null)
     const [loadingInitial, setLoadingInitial] = useState(true)
@@ -41,7 +41,6 @@ export const AuthProvider = ({ children }) => {
             .catch((error) => setError(error))
             .finally(() => setLoading(false))
     }
-
 
     const signInWithGoogle = async () => {
         setLoading(true)

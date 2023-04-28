@@ -1,38 +1,35 @@
-import { View, Text, Button, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, Button, SafeAreaView, TouchableOpacity, Image } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useTailwind } from 'tailwind-rn';
-import { AntDesign, Entypo, Ionicons} from '@expo/vector-icons/';
+import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons/';
 
 const tw = useTailwind
 
 const HomeScreen = () => {
     const navigation = useNavigation()
-    const { user, logout } = useAuth()
-    console.log(user);
+    // const { user, logout } = useAuth()
+    // console.log(user);
 
     return (
         <SafeAreaView>
-
-            <View style={tw('flex-row items-center justify-between px-5')} >
-                <TouchableOpacity onPress={logout}>
-                    <Image style={tw('h-10 w-10 rounded-full')}
-                    source={{ uri: user.photoURL }}
-                    />
+            <View style={tw('flex-row items-center justify-between px-5')}>
+                <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+                    <Ionicons name='person-circle-sharp' size={30} color="#FF5864"/><ion-icon name="fast-food-sharp"></ion-icon>
                 </TouchableOpacity>
 
                 <TouchableOpacity>
-                    <Image style={tw('h-14 w-14')} source={require("../images/logo.jpeg")} />
+                    <Image style={tw('h-14 w-14')} source={require("../images/bcg.png")} />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("Chat")}>
                     <Ionicons name='chatbubbles-sharp' size={30} color="#FF5864" />
                 </TouchableOpacity>
             </View>
 
             <Text>I am the HomeScreen for Dinder!</Text>
             <Button title="Go to chat screen" onPress={() => navigation.navigate("Chat")} />
-            <Button title="Logout" onPress={logout} />
+            {/* <Button title="Logout" onPress={logout} /> */}
         </SafeAreaView>
     )
 }
